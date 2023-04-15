@@ -18,7 +18,7 @@ In this round, we worked on pearls and bananas separately. For pearls, we realiz
 
 For bananas, we ran a linear regression on the last few timesteps of banana prices to predict the next price. Using this to market-take worked reasonably, and market-making along with market-taking worked quite well. We tried to implement LR-on-the-fly, but this didn't work as well (and with the Lambda error bugs that were prevalent through the competition, it was for the best to skip this approach). We noticed that the banana trends were linear-ish across days (ie, day 2 was more similar to day 1 in LR coefficients than day -1 and so on), which could give an additional boost in PnL.
 
-The manual trading was straightforward in this round. Based on the results of Round 1, we were in 9th place.
+The manual trading was straightforward in this round. Based on the results of Round 1, we were in 40th place.
 
 # Round 2
 ## Algorithm challenge
@@ -34,9 +34,9 @@ Position limits for the newly introduced products:
 
 A large group of ducks request a price for your pineapples. They will only buy pineapples at the 50% best prices that they get, so players have to be competitive. However, as the pineapple price is expected to settle at the average price that the ducks bought their pineapples at, you definitely want to make sure that you don’t sell below that price, or you’ll make a loss on your trade.
 
-Unfortunately, both me and Konstantin were travelling/very busy during the next couple of rounds, so it was a bit harder to try things in Rounds 2-4. For the Coconuts/Pina Coladas, Konstantin wrote up code to perform pair-trading (arbitraging pina colada - 15/8 * coconut); something else we tried was momentum-based trading, but this didn't give a PnL as high as pair-trading, so we mostly submitted the first code we came up with.
+For the Coconuts/Pina Coladas, Shrut wrote up code to perform pair-trading (arbitraging pina colada - 15/8 * coconut); something else we tried was momentum-based trading, but this didn't give a PnL as high as pair-trading, so we mostly submitted the first code we came up with.
 
-For the manual round, we submitted a guess of 9,777 based on a simulation. This was good enough to net us some profit, with the median price of the bottom 50% being 9,685. Shockingly, we got a score of below -120k in the algorithmic trading in this round, which dropped us from 9th place to... 926th place!!!
+For the manual round, we submitted a guess of 9,777 based on a simulation. This was good enough to net us some profit, with the median price of the bottom 50% being 9,685. Shockingly, we got a score of below -120k in the algorithmic trading in this round, which dropped us from 40th place to... 376th place!!!
 
 # Round 3
 ## Algorithm challenge
@@ -52,9 +52,9 @@ Position limits for the newly introduced products:
 
 The ducks are back, and they behave exactly the same as in round two. However, after the previous round you had the opportunity to see what the rest of the market was thinking. Could you use that information to predict what your peers will do next?
 
-After the shock of dropping to an extremely low rank, we decided to not participate in Prosperity anymore. Still, Konstantin wrote some code for Berries and Diving Gear, which seemed to work reasonably. The ideas were as follows: For berries, he hardcoded some values of the curve (buy at timestamp 350k, sell at 500k, either buy or sell at 750k depending on the overall day's trend). For diving gear, he noticed that Dolphin sightings would increase or decrease by a huge amount (+-5 or higher) if there was a true signal; a small change such as +-2 from the last dolphin sighting was very likely noise.
+After the shock of dropping to an extremely low rank, we decided to not participate in Prosperity anymore. Still, Shrut, Dhariya & Namam wrote some code for Berries and Diving Gear, which seemed to work reasonably. The ideas were as follows: For berries, he hardcoded some values of the curve (buy at timestamp 350k, sell at 500k, either buy or sell at 750k depending on the overall day's trend). For diving gear, Shrut noticed that Dolphin sightings would increase or decrease by a huge amount (+-5 or higher) if there was a true signal; a small change such as +-2 from the last dolphin sighting was very likely noise.
 
-For the manual trading, I decided to enter 9,959 after a bit of eyeballing, which was close to the optimal score of 9,969. Our algorithm also worked extremely well this round, propelling us from 926th to 60th place (we had the overall highest score this round, based on https://jmerle.github.io/imc-prosperity-leaderboard/). Looking at these results, my suspicion grew about our Round 2 algorithm, and I asked the moderators once again for our logs; it turned out that our algorithm was actually judged incorrectly! Therefore, though we were officially 60th place, we knew that we were 3rd place at the moment in reality.
+For the manual trading, I decided to enter 9,959 after a bit of eyeballing, which was close to the optimal score of 9,969. Our algorithm also worked extremely well this round, propelling us from 926th to 60th place (we had the overall highest score this round, based on https://jmerle.github.io/imc-prosperity-leaderboard/). Looking at these results, my suspicion grew about our Round 2 algorithm, and I asked the moderators once again for our logs; it turned out that our algorithm was actually judged incorrectly! Therefore, though we were officially 298th place, we knew that we were 20th place at the moment in reality.
 
 # Round 4
 ## Algorithm challenge
@@ -85,7 +85,7 @@ For the manual trading round, we found that if the stock moves
 x% and if we invest y%, the output function would be 75xy - 90y^2
 , which would put the optimal y value at y = 2.5x/6. Using this idea, we simply individually bet on the amount we thought each stock would move, invested that much, and iterated a bit. We ended up investing about 100% of our capital.
 
-After Round 4, we jumped to Rank 5 from Rank 60 (though we knew we actually went from Rank 3 -> 5). Our manual trading score was 75k, whereas the best score we heard was around 115k; our algorithm score was 175k, which was a bit lower than expected. We had an outside shot at winning; the difference between us and the top team was only 30k, but between us and the 10th team was a 100k!
+After Round 4, we jumped to Rank 5 from Rank 60 (though we knew we actually went from Rank 3 -> 5). Our manual trading score was 75k, whereas the best score we heard was around 115k; our algorithm score was 175k, which was a bit lower than expected. We had an outside shot at winning; the difference between us and the top team was only 130k.
 
 # Round 5
 ## Algorithm challenge
@@ -111,8 +111,5 @@ Use some sort of momentum based ideas for Baguettes: we noticed that Baguettes u
 Some of our main ideas in the final round were to be rigorous about not overfitting, and avoiding complicated models due to the lack of test data. In retrospect this was justified, looking at the lower scores most other teams in the top 10 got in Round 5.
 
 Final results
-After all was said and done, we ended up in... 2nd place. While this is a good result, this competition had announced a prize only for top 1, so it hurt a bit being 2nd... Also, the AWS Lambda errors left a bit of a sour taste in our mouths.
-
+After all was said and done, we ended up in... 27th place.
 But when all was said and done, this was a fun competition in which we got to work on some cool ideas; so thank you to all of the people behind Prosperity, and everyone who participated - it was exciting participating alongside yall! :)
-
-PS - IMC reached out to send us a "present".. I'm curious what it is :D
