@@ -1,7 +1,7 @@
 # IMC-prosperity - 2023
 
 # Round-wise details
-Round 1
+# Round 1
 ## Algorithm challenge
 
 The first two tradable products are introduced: PEARLS and BANANAS. While the value of the PEARLS has been stable throughout the history of the archipelago, the value of BANANAS has been going up and down over time. Develop your initial trading strategy and write your first Python program to get off to a good start in this world of trading and market making. Even if the price of a product moves very little or in a very unpredictable way, there might still be clever ways to profit if you both buy and sell.
